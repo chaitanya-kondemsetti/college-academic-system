@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Log in</title>
+    <link rel="stylesheet" href="signup.css" />
+</head>
+
+<body>
+    <div>
+        <div id="successMessage" style="display: none; color: #22c55e; padding: 12px; border-radius: 8px; text-align: center; margin-bottom: 20px; animation: slideDown 0.3s ease-out;">
+            ✓ Login successful!
+        </div>
+        
+        <div id="errorMessage" style="display: none; color: #ef4444; padding: 12px; border-radius: 8px; text-align: center; margin-bottom: 20px; animation: slideDown 0.3s ease-out;">
+            ✗ Login unsuccessful! Invalid username or password.
+        </div>
+        
+        <h1>
+            <center>User Login</center>
+        </h1>
+        <form action="http://localhost:3000/login" method="POST">
+            <label>Username</label>
+
+            <input type="text" name="username" required />
+
+            <label>Password</label>
+
+            <input type="password" id="passwordField" name="password" required />
+
+            
+
+            <br><br>
+            <button type="submit">Login</button>
+            <br><br>
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        </form>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const success = urlParams.get('success');
+        const error = urlParams.get('error');
+        
+        if (success === '1') {
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            
+            window.history.replaceState({}, document.title, window.location.pathname);
+            
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 2000);
+        }
+        
+        if (error === '1') {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.style.display = 'block';
+            
+            window.history.replaceState({}, document.title, window.location.pathname);
+            
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+
+    <style>
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+
+</html>

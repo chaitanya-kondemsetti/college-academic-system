@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SGPA & CGPA Calculator</title>
+     <link rel="stylesheet" href="grade.css">
+     <link rel="icon" href="favicon.ico" type="image/x-icon">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body>
+
+    
+    <div class="top-buttons">
+        <button id="btnCgpa" class="btn">Calculate CGPA</button>
+        <button id="btnSgpa" class="btn">Calculate SGPA</button>
+    </div>
+
+   
+    <section id="sgpaSection" class="module">
+
+        <h2 class="title">SGPA Calculator</h2>
+
+        
+        <div id="sgpaSubjects" class="subjects">
+
+           
+            <div class="subject-row">
+                <input type="text" placeholder="subject" class="subject-name" id="subname1">
+                <input type="number" placeholder="Credits" class="credits"id="crenum1">
+                <select class="grade">
+                    <option>Grade Points</option>
+                    <option>10 (90-100)</option>
+                    <option>9 (80-89)</option>
+                    <option>8 (70-79)</option>
+                    <option>7 (60-69)</option>
+                    <option>6 (50-59)</option>
+                    <option>5 (40-49)</option>
+                    <option>0 (Fail)</option>
+                </select>
+                <button class="remove-btn">Remove</button>
+            </div>
+
+        </div>
+
+       
+        <div class="section-actions">
+            <button id="addSgpaSubject" class="pri-btn">Add Subject</button>
+            <button id="calcSgpa" class="pri-btn">Calculate SGPA</button>
+        </div>
+
+    </section>
+
+    
+    <section id="cgpaSection" class="module">
+
+        <h2 class="title">CGPA Calculator</h2>
+
+        
+        <div id="semesters" class="semesters">
+
+            
+            <div id="sem" class="semmm">
+
+                
+                <div class="semester-header">
+                    <h3>Semester 1</h3>
+                    <button class="rm-sem-btn">Remove Semester</button>
+                </div>
+
+                
+                <div>
+
+                    
+                    <div class="subject-row">
+                        <input type="text" placeholder="Subject" class="subject-name" id="subname2">
+                        <input type="number" placeholder="Credits" class="credits" id="crenum2">
+                        <select class="grade">
+                            <option>Grade Points</option>
+                            <option>10 (90-100)</option>
+                            <option>9 (80-89)</option>
+                            <option>8 (70-79)</option>
+                            <option>7 (60-69)</option>
+                            <option>6 (50-59)</option>
+                            <option>5 (40-49)</option>
+                            <option>0 (Fail)</option>
+                        </select>
+                        <button class="remove-btn">Remove</button>
+                    </div>
+
+                </div>
+
+                <button id="addCgpaSubject" class="sec-btn">Add Subject</button>
+
+            </div>
+
+        </div>
+
+        
+        <div class="section-actions">
+            <button id="addSemester" class="pri-btn">Add Semester</button>
+            <button id="calcCgpa" class="pri-btn">Calculate CGPA</button>
+        </div>
+
+    </section>
+<script src="grade.js"></script>
+
+</body>
+</html>
