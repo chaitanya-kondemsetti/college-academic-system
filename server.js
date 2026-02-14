@@ -62,6 +62,9 @@ app.post("/login", (req, res) => {
             else if (results.length > 0) {
                 res.redirect("http://localhost:3000/dashboard");
             }
+            else {
+                res.redirect("http://localhost:3000/login.html?error=1");
+            }
         }
     );
 });
